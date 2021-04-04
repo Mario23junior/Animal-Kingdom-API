@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.DecimalMin;
 
 @Entity
 public class Animal {
@@ -13,7 +14,11 @@ public class Animal {
 	private Long id;
 	
 	private String nome;
-	private Integer velocidade;
+	
+	@DecimalMin("1")
+ 	private Integer velocidade;
+	
+	@DecimalMin("1")
 	private Double peso;
 	
 	public Long getId() {
