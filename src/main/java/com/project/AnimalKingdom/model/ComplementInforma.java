@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.DecimalMin;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 public class ComplementInforma {
@@ -13,6 +14,7 @@ public class ComplementInforma {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
+	@NotEmpty(message = "{campo.nome.cientifico.valid}")
 	private String nomeCientifico;
 	
 	@DecimalMin("0.0")
