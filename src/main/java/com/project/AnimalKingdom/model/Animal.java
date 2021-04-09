@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.DecimalMin;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 public class Animal {
@@ -12,8 +14,13 @@ public class Animal {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
+	@NotEmpty(message = "{campo.nome.valid}")
 	private String nome;
-	private Integer velocidade;
+	
+	@DecimalMin("1")
+ 	private Integer velocidade;
+	
+	@DecimalMin("1")
 	private Double peso;
 	
 	public Long getId() {

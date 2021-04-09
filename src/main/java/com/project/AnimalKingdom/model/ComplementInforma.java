@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.DecimalMin;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 public class ComplementInforma {
@@ -12,10 +14,19 @@ public class ComplementInforma {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
+	@NotEmpty(message = "{campo.nome.cientifico.valid}")
 	private String nomeCientifico;
+	
+	@DecimalMin("0.0")
 	private Double altura;
+	
+	@DecimalMin("0.0")
 	private Double comprimento;
+	
+	@DecimalMin("0")
 	private Integer expectativaDeVida;
+	
+	@DecimalMin("0")
 	private Integer periodoDeGestacao;
 	
 	public Long getId() {
