@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -50,6 +51,17 @@ public class AnimalController {
 		            	 animalRepository.delete(d);
 		            	 return d;
 		             }).orElseThrow(() -> new ResponseStatusException(HttpStatus.NO_CONTENT,"Não foi possivel deletar animal"));
+	}
+	
+	@PutMapping("/{id}")
+	public void update(@PathVariable Long id, @Valid @RequestBody Animal animal) {
+		      animalRepository
+				      .findById(id)
+				      .map(update -> {
+				    	  animal.setId(update.getId());
+				    	  animalRepository.save(animal);
+				    	  return update;
+				      }).orElseThrow(() -> new ResponseStatusException(HttpStatus.NO_CONTENT,"informação não pode ser apagada"));
 	}
 	
 	
