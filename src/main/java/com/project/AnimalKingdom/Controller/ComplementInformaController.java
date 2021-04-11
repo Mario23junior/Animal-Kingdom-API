@@ -3,6 +3,7 @@ package com.project.AnimalKingdom.Controller;
 import javax.validation.Valid;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -36,6 +37,17 @@ public class ComplementInformaController {
 	   return complementInformaRepository 
 			     .findById(id)
 			     .orElseThrow(() -> new ResponseStatusException(HttpStatus.NO_CONTENT,"Informação não encontrada"));
+   }
+   
+   @DeleteMapping("/{id}")
+   @ResponseStatus(HttpStatus.NO_CONTENT)
+   public void delete(@PathVariable Long id) {
+	   complementInformaRepository
+	                 .findById(id)
+	                 .map(delete -> {
+	                	 complementInformaRepository.deleteById(id);
+	                	 return delete;
+	                 }).orElseThrow(() -> new ResponseStatusException(HttpStatus.NO_CONTENT,"informaçaões não encontrados para deletação"));
    }
    
 }
