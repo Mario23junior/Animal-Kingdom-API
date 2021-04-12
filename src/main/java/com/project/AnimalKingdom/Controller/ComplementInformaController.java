@@ -14,12 +14,13 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
+import com.project.AnimalKingdom.Controller.DocControllerComplementInfo.DocControllerComplementInfo;
 import com.project.AnimalKingdom.model.ComplementInforma;
 import com.project.AnimalKingdom.repositorys.ComplementInformaRepository;
 
 @RestController
 @RequestMapping("info/comple")
-public class ComplementInformaController {
+public class ComplementInformaController implements DocControllerComplementInfo{
     
    ComplementInformaRepository complementInformaRepository;
    
