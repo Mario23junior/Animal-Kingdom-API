@@ -2,6 +2,7 @@ package com.project.AnimalKingdom.Controller.DocController;
 
 import javax.validation.Valid;
 
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import com.project.AnimalKingdom.model.Animal;
@@ -19,5 +20,15 @@ public interface DocControllerAnimal {
 			
 	})
 	public Animal save(@RequestBody @Valid Animal animal);
+	
+	
+	@ApiOperation(value = "Buscando dados dos animais por id")
+	@ApiResponses(value = { 
+			@ApiResponse(code = 200, message = "sucesso"),
+			@ApiResponse(code = 404, message = "nenhuma informação foi em encontrada")
+			
+	})
+	public Animal find(@PathVariable Long id);
+
 
 }
