@@ -14,18 +14,20 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
+import com.project.AnimalKingdom.Controller.DocController.DocControllerAnimal;
 import com.project.AnimalKingdom.model.Animal;
 import com.project.AnimalKingdom.repositorys.AnimalRepository;
 
 @RestController
 @RequestMapping("animal/data")
-public class AnimalController {
+public class AnimalController implements DocControllerAnimal{
     
 	AnimalRepository animalRepository;
 	
 	public AnimalController(AnimalRepository animalRepository) {
 		 this.animalRepository = animalRepository;
 	}
+	
 	
 	@PostMapping("/")
 	@ResponseStatus(HttpStatus.CREATED)
