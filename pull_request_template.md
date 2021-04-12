@@ -9,7 +9,7 @@ Algumas frases que descrevem os objetivos gerais dos commits da solicitação pu
 - [] Documentação
 
 ## Etapas para testar ou reproduzir
-Descreva as etapas para testar ou reproduzir o PR aqui.
+acesse a documentação : http://localhost:8080/swagger-ui.html#/
 
 ```sh
 mvn spring-boot:run
