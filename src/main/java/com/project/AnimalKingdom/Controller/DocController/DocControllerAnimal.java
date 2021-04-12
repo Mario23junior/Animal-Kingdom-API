@@ -29,6 +29,30 @@ public interface DocControllerAnimal {
 			
 	})
 	public Animal find(@PathVariable Long id);
-
-
+	
+	
+	@ApiOperation(value = "Deletando dados de aniamis")
+	@ApiResponses(value = { 
+			@ApiResponse(code = 200, message = "sucesso"),
+			@ApiResponse(code = 404, message = "nenhuma informação foi em encontrada para ser deletada")
+			
+	})
+	public void delete(@PathVariable Long id);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
