@@ -1,12 +1,12 @@
 ## Status
-** PRONTO / EM DESENVOLVIMENTO / MANTER **
+**MANTER**
 
 ## Descrição
 Algumas frases que descrevem os objetivos gerais dos commits da solicitação pull.
 
 ## Todos
 - [] Testes
-- [] Documentação
+- [X] Documentação
 
 ## Etapas para testar ou reproduzir
 acesse a documentação : http://localhost:8080/swagger-ui.html#/
