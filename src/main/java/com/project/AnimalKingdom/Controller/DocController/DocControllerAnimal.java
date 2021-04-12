@@ -31,13 +31,23 @@ public interface DocControllerAnimal {
 	public Animal find(@PathVariable Long id);
 	
 	
-	@ApiOperation(value = "Deletando dados de aniamis")
+	@ApiOperation(value = "Deletando dados de animais")
 	@ApiResponses(value = { 
 			@ApiResponse(code = 200, message = "sucesso"),
 			@ApiResponse(code = 404, message = "nenhuma informação foi em encontrada para ser deletada")
 			
 	})
 	public void delete(@PathVariable Long id);
+	
+	
+	@ApiOperation(value = "Atualizando dados")
+	@ApiResponses(value = { 
+			@ApiResponse(code = 200, message = "sucesso"),
+			@ApiResponse(code = 500, message = "não foi possivel atualizar informação")
+			
+	})
+	public void update(@PathVariable Long id, @Valid @RequestBody Animal animal);
+
 }
 
 
