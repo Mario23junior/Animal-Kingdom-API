@@ -27,9 +27,19 @@ public interface DocControllerComplementInfo {
 	@ApiOperation(value = "Buscando informações complementares no banco de dados")
 	@ApiResponses(value = { 
 			@ApiResponse(code = 200, message = "sucesso"),
-			@ApiResponse(code = 500, message = "erro ao salvar dados")
+			@ApiResponse(code = 500, message = "erro ao buscar informações dados")
 			
 	})
     public ComplementInforma findId(@PathVariable Long id);
+	
+	
+	@ApiOperation(value = "deletando informações complementares no banco de dados por id")
+	@ApiResponses(value = { 
+			@ApiResponse(code = 201, message = "sucesso"),
+			@ApiResponse(code = 500, message = "erro ao deletar dados")
+			
+	})
+    public void delete(@PathVariable Long id);
+
 
 }
