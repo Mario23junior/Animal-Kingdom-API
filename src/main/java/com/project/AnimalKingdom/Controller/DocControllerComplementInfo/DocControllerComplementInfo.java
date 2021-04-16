@@ -45,7 +45,7 @@ public interface DocControllerComplementInfo {
 	@ApiOperation(value = "atualizando informações complementares no banco de dados por id")
 	@ApiResponses(value = { 
 			@ApiResponse(code = 201, message = "sucesso"),
-			@ApiResponse(code = 500, message = "erro ao deletar dados")
+			@ApiResponse(code = 500, message = "erro ao atulizar dados")
 			
 	})
     public void update(@PathVariable Long id, @RequestBody ComplementInforma compleInfo);
