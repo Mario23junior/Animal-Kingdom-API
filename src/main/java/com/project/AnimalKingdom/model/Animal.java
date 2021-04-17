@@ -33,8 +33,6 @@ public class Animal {
 	private ComplementInforma ComplementInforma;
 	
 	
-	
-	
 	public ComplementInforma getComplementInforma() {
 		return ComplementInforma;
 	}

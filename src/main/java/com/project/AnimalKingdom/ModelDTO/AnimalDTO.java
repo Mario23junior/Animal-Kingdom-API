@@ -14,7 +14,6 @@ public class AnimalDTO {
 	private Integer periodoDeGestacao;
 	
 	
-	
 	public String getNomeCientifico() {
 		return nomeCientifico;
 	}
