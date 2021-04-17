@@ -3,12 +3,15 @@ package com.project.AnimalKingdom.Service.ImplementsDTO;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.springframework.stereotype.Service;
+
 import com.project.AnimalKingdom.ModelDTO.AnimalDTO;
 import com.project.AnimalKingdom.Service.ServiceDTOInplements;
 import com.project.AnimalKingdom.model.Animal;
 import com.project.AnimalKingdom.model.ComplementInforma;
 import com.project.AnimalKingdom.repositorys.AnimalRepository;
 
+@Service
 public class implementsDTO implements ServiceDTOInplements {
     
 	private AnimalRepository animalRepository;
