@@ -1,5 +1,5 @@
 ## Status
-** PRONTO / EM DESENVOLVIMENTO / MANTER **
+**PRONTO / EM DESENVOLVIMENTO / MANTER**
 
 ## Descrição
 Algumas frases que descrevem os objetivos gerais dos commits da solicitação pull.
