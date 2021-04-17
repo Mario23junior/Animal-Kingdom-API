@@ -32,6 +32,15 @@ public class Animal {
 	@JoinColumn(name = "ComplementInforma_id")
 	private ComplementInforma ComplementInforma;
 	
+	
+	
+	
+	public ComplementInforma getComplementInforma() {
+		return ComplementInforma;
+	}
+	public void setComplementInforma(ComplementInforma complementInforma) {
+		ComplementInforma = complementInforma;
+	}
 	public Long getId() {
 		return id;
 	}
