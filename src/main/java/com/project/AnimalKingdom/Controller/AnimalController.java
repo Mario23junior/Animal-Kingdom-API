@@ -40,19 +40,19 @@ public class AnimalController implements DocControllerAnimal{
 	public Animal find(@PathVariable Long id) {
 		return animalRepository
 		           .findById(id)
-		           .orElseThrow(() -> new ResponseStatusException(HttpStatus.NO_CONTENT,"Nenhun usuarios encontrado"));
+		           .orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST,"Nenhun usuarios encontrado"));
 	}
 	
 	
 	@DeleteMapping("/{id}")
-	@ResponseStatus(HttpStatus.NO_CONTENT)
+	@ResponseStatus(HttpStatus.OK)
 	public void delete(@PathVariable Long id) {
 		animalRepository
 		             .findById(id)
 		             .map(d -> {
 		            	 animalRepository.delete(d);
 		            	 return d;
-		             }).orElseThrow(() -> new ResponseStatusException(HttpStatus.NO_CONTENT,"Não foi possivel deletar animal"));
+		             }).orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST,"Não foi possivel deletar animal"));
 	}
 	
 	@PutMapping("/{id}")
@@ -63,7 +63,7 @@ public class AnimalController implements DocControllerAnimal{
 				    	  animal.setId(update.getId());
 				    	  animalRepository.save(animal);
 				    	  return update;
-				      }).orElseThrow(() -> new ResponseStatusException(HttpStatus.NO_CONTENT,"informação não pode ser apagada"));
+				      }).orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST,"informação não pode ser atualizada"));
 	}
 	
 	
