@@ -63,7 +63,7 @@ public class AnimalController implements DocControllerAnimal{
 				    	  animal.setId(update.getId());
 				    	  animalRepository.save(animal);
 				    	  return update;
-				      }).orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST,"informação não pode ser atualizada"));
+				      }).orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST,"informação não pode se "));
 	}
 	
 	

@@ -12,14 +12,14 @@ import com.project.AnimalKingdom.model.ComplementInforma;
 import com.project.AnimalKingdom.repositorys.AnimalRepository;
 
 @Service
-public class implementsDTO implements ServiceDTOInplements {
+public class implementsDTO implements ServiceDTOInplements{
     
 	private AnimalRepository animalRepository;
 	
 	public implementsDTO(AnimalRepository animalRepository) {
        this.animalRepository = animalRepository;
 	}
-	
+		
 	@Override
 	public List<AnimalDTO> listAll() {
  		return ((List<Animal>)
@@ -28,11 +28,12 @@ public class implementsDTO implements ServiceDTOInplements {
  				     .stream()
  				     .map(this::converterAnimalImplementDTO)
  				     .collect(Collectors.toList());
+ 		
  				
 	}
 	             
 	public AnimalDTO converterAnimalImplementDTO(Animal animal) {
-         
+     
 		 AnimalDTO dtoAnimal = new AnimalDTO();
 		 dtoAnimal.setId(animal.getId());
 		 dtoAnimal.setNome(animal.getNome());
@@ -48,6 +49,15 @@ public class implementsDTO implements ServiceDTOInplements {
 		 
 		 return dtoAnimal;
 		 
-		 
  	}
+
 }
+
+
+
+
+
+
+
+
+

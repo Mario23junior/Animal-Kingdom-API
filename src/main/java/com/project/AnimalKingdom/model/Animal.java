@@ -27,12 +27,11 @@ public class Animal {
 	@DecimalMin("1")
 	private Double peso;
 	
-	@ManyToOne
-	@JsonIgnore
-	@JoinColumn(name = "ComplementInforma_id")
+  	@ManyToOne
+  	@JoinColumn(name = "ComplementInforma_id")
 	private ComplementInforma ComplementInforma;
 	
-	
+  	@JsonIgnore
 	public ComplementInforma getComplementInforma() {
 		return ComplementInforma;
 	}
