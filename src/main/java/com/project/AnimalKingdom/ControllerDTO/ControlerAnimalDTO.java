@@ -21,7 +21,7 @@ public class ControlerAnimalDTO {
 	}
 	
 	@GetMapping("/data")
-	public List<AnimalDTO> listAllData() {
+ 	public List<AnimalDTO> listAllData() {
 		List<AnimalDTO> informa = listAll.listAll();
 		return informa;
 	}
